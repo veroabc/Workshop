@@ -2,10 +2,6 @@
 
 <head>
     <style type="text/css">
-         :root {
-            --titleColor: #ff0000;
-        }
-        
         body {
             background-image: url("https://assets.deutschlandfunk.de/FILE_f0a70dfa893ee147035cdea503bd25d2/1280x720.jpg?t=1597645027862");
             background-repeat: no-repeat;
@@ -13,94 +9,93 @@
             background-color: #ffffffdf;
             background-blend-mode: lighten;
         }
-        
+
         .infoTextHeader {
             color: var(--titleColor);
         }
-        
-        #root {
-            margin: auto;
-        }
-        
+
         #phaseNaviBtns {
             margin: auto;
             width: max-content;
         }
-        
+
         .txtStandard {
             display: block;
-            margin: 0;
             padding: 0;
             font-size: larger;
             font-weight: lighter;
             white-space: pre-line;
             text-align: justify;
         }
-        
+
         .naviBtn2 {
             margin-left: 20px;
         }
-        
+
         .btnStandard {
             display: none;
-            margin: 0;
-            bottom: 10%;
-            left: 50%;
+            margin-left: 20px;
             font-size: 120%;
             padding-bottom: 10px;
             padding-top: 10px;
             padding-right: 30px;
             padding-left: 30px;
-            margin-left: 20px;
         }
-        
-        .btn-row {
+
+        #divBottom {
             position: absolute;
-            top: 50%;
-            /* Position Y halfway in */
+            top: 85%;
             left: 50%;
-            /* Position X halfway in */
-            transform: translate(-50%, 600%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
         }
-        
+
+        .divBtns2 {
+            display: inline-flex;
+        }
+
         #titleIntro1 {
             text-align: center;
             font-size: 200%;
         }
-        
+
         #titleIntro2 {
             text-align: left;
             font-size: 150%;
         }
-        
+
         #txtIntro {
             margin-top: 10%;
         }
-        
+
         .divTxt {
             display: none;
-            margin: 10% auto;
-            max-width: 1200px;
+
         }
-        
-        #btnStart {
+
+        .divTxtRoot {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        #btnContinue {
             display: block;
         }
-        
+
         #txtStopwatch {
             text-align: center;
             font-size: 130%;
-            margin: 0;
-            bottom: 5%;
-            left: 50%;
-            position: absolute;
-            transform: translateX(-50%) translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        
-        .center-content {
+
+        .centerContent {
             margin-top: 90px;
             display: flex;
             align-items: center;
@@ -108,29 +103,29 @@
             width: 100%;
             height: 100%;
         }
-        
+
         #iframeVideo {
-            margin: 0;
+            margin-top: 0px;
         }
-        
+
         #imgSeparation {
             margin: 0;
         }
-        
+
         .radioBtn {
             margin-top: 50px;
         }
-        
+
         .resultRowRight {
             background-color: #0f940082;
             display: block;
         }
-        
+
         .resultRowWrong {
             background-color: #d5000081;
             display: block;
         }
-        
+
         .quiz-btn {
             background-color: #4255ff;
             padding: 1rem 2rem;
@@ -138,7 +133,7 @@
             color: white;
             text-decoration: none;
         }
-        
+
         #back_btn {
             display: none;
         }
@@ -149,366 +144,499 @@
 
     <div id="root">
 
-        <div class="divTxt" id="divIntro">
-            <b class="txtStandard" id="titleIntro1">
-            Willkommen zum Workshop!
-        </b>
-            <b class="txtStandard" id="titleIntro2">
+        <div class="divTxtRoot">
+            <div class="divTxt" id="divIntro">
+                <b class="txtStandard" id="titleIntro1">
+                    Willkommen zum Workshop!
+                </b>
+                <b class="txtStandard" id="titleIntro2">
 
-            Thema: Zeitstruktur und Handlungsstruktur
-            Teilnehmer: mind. 4
-        </b>
-            <b class="txtStandard" id="txtIntro">
-            Bitte stellt sicher, dass alle Gruppenmitglieder soweit sind. Drückt danach dann alle jeweils für sich den Start-Button, um den Workshop zu beginnen. Wir wünschen Euch beim Workshop viel Spaß!
+                    Thema: Zeitstruktur und Handlungsstruktur
+                    Teilnehmer: mind. 4
+                </b>
+                <b class="txtStandard" id="txtIntro">
+                    Bitte stellt sicher, dass alle Gruppenmitglieder soweit sind. Drückt danach dann alle jeweils für
+                    sich
+                    den Start-Button, um den Workshop zu beginnen. Wir wünschen Euch beim Workshop viel Spaß!
 
-            Der untere Start-Button ist auch der Button, mit dem Ihr auf die nächste Seite gelangt. Bitte stellt sicher, dass Ihr diesen Button erst anklickt, sobald Ihr wirklich fertig seid. Unter dem Start-Button befindet sich auf den folgenden Seiten ein Timer. Dieser Timer zählt herunter und dient zur zeitlichen Orientierung. Es wird kein Wechsel zur nächsten Seite erzwungen. Jedoch ist dies die geplante Zeitspanne für eine Seite. Versucht Euch daher bitte daran zu halten.
-        </b>
+                    Der untere Start-Button ist der Button, mit dem Ihr auf die nächste Seite gelangt. Bitte stellt
+                    sicher,
+                    dass Ihr diesen Button erst anklickt, sobald Ihr wirklich fertig seid. Unter dem Start-Button
+                    befindet
+                    sich auf den folgenden Seiten ein Timer. Dieser Timer zählt herunter und dient zur zeitlichen
+                    Orientierung. Es wird kein Wechsel zur nächsten Seite erzwungen. Jedoch ist dies die geplante
+                    Zeitspanne
+                    für eine Seite. Versucht Euch daher bitte daran zu halten.
+                </b>
+            </div>
+            <div class="divTxt" id="divPath">
+                <b class="txtStandard" id="txtPath">
+                    Zunächst erhälst Du einen kurzen Überblick über den Ablauf des Workshops. Die folgende
+                    Darstellung
+                    beschreibt den groben Ablauf. Genauere Informationen darüber, was als nächstes zu tun ist,
+                    erhälst
+                    Du im
+                    Laufe des Workshops.
+
+
+
+                    1. Gruppeneinteilung
+
+                    2. Infos zum Thema: Zeitstruktur
+                    3. Aufgaben
+                    4. Quiz-Fragen
+                    5. Kreatives Spiel
+
+                    6. Infos zum Thema: Handlungsstruktur
+                    7. Aufgaben
+                    8. Quiz-Fragen
+                </b>
+            </div>
+            <div class="divTxt" id="divSeparation">
+                <b class="txtStandard" id="txtSeparation">
+                    Bitte teilt Euch in zwei Teilgruppen auf. Anschließend sucht sich bitte jede Teilgruppe
+                    hintereinander
+                    eine Karte zum Thema Erzähltempo aus.
+                    Die jeweils andere Teilgruppe dreht sich bitte um, damit sie die Wahl nicht sehen kann. Die Karten
+                    dafür
+                    liegen auf dem Tisch.
+                </b>
+                <div class="centerContent">
+                    <img id="imgSeparation"
+                        src="https://www.cmshs-bloggt.de/wp-content/uploads/2018/07/005836_lo-res-600x400.jpg">
+                </div>
+            </div>
+
+            <div class="divTxt" id="divZeitstrukturWatch">
+
+                <b class="txtStandard" id="txtZeitstrukturWatch">
+                    Das folgende Video vermittelt Inhalte zum Thema Zeitstruktur. Schaut Euch bitte dieses Video
+                    individuell
+                    oder zusammen an.
+                </b>
+                <div class="centerContent">
+                    <iframe id="iframeVideo" style="margin-bottom: 100px;" width="950" height="526"
+                        src="https://www.youtube.com/embed/hHX79uz0qck"
+                        title="Erzähltechnik - Zeitgestaltung -Erzählte Zeit und Erzählzeit - Erzähltechniken in der Epik erklärt!"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+            </div>
+            <div class="divTxt" id="divZeitstrukturRead1">
+                <b class="txtStandard" id="txtZeitstrukturRead1">
+                    Auf dieser und der folgenden Seite sind die Inhalte zum Thema Zeitstruktur in Spielform aufgeführt.
+                    Bitte ließt Euch diese Texte individuell oder zusammen durch.
+
+
+
+
+
+                    Die <strong>Zeit</strong> bestimmt, ob und inwieweit die Geschichte historisch verortet ist, ob sie
+                    sich
+                    klar erkennbar einer historischen Situation zuordnen lässt und welche Bedeutung diese Situation
+                    für
+                    das
+                    erzählte Geschehen hat.
+
+                    Die <strong>Erzählzeit</strong> entspricht der Zeit, die man braucht, um den Text zu lesen.
+
+                    Die <strong>Erzählte Zeit</strong> ist der Zeitraum, in dem sich das erzählte Geschehen abspielt.
+
+                    <a class="quiz-btn" href="https://quizlet.com/731874333/learn" target="_blank">Start Quizlet</a>
+
+                </b>
+            </div>
+            <div class="divTxt" id="divZeitstrukturRead2">
+
+                <b class="txtStandard" id="txtZeitstrukturRead2">
+                    Grundsätzlich spricht man von drei <strong>Erzähltempo</strong>, in denen Texte oder Teile von
+                    Texten
+                    ablaufen können. Entspricht die Erzählzeit der erzählten Zeit, so liegt eine Zeitdeckung vor. Ist
+                    die
+                    Erzählzeit kürzer als die erzählte Zeit, hat man es mit einer Zeitraffung zu tun, im umgekehrten
+                    Fall
+                    mit einer Zeitdehnung.
+
+
+
+
+
+                    Eine <strong>Zeitdeckung</strong> liegt vor, wenn die Erzählzeit und die erzählte Zeit sich im
+                    spezifischen Erzählen decken.
+
+                    Bei einer <strong>Zeitraffung</strong> ist die Erzählzeit kürzer als die erzählte Zeit, wenn
+                    Zeitspannen
+                    übersprungen oder Vorgänge stark zusammengefasst wiedergegeben werden. Beispiel: "Nun verlor der
+                    ander
+                    die Geduld. Er packte ..".
+
+                    Bei einer <strong>Zeitdehnung</strong> hingegen ist die Erzählzeit länger als die erzählte Zeit.
+                    Z.B.
+                    wenn die Gedanken und Gefühle einer Figur in einem kurzen Handlungsmoment ausführlich
+                    wiedergegeben
+                    werden.
+
+
+                    <a class="quiz-btn" href="https://quizlet.com/731874333/match" target="_blank">Start Quizlet</a>
+                </b>
+            </div>
+            <div class="divTxt" id="divZeitstrukturQuiz1Question1">
+                <fieldset>
+                    <legend>
+                        <h1>Erzähltempo - Verhältnis zwischen Erzählzeit und erzählte Zeit.</h1>
+                        “Sie fuhren gegen Ligerz hinunter, hinein in ein Land, das sich ihnen in einer ungeheuren
+                        Tiefe
+                        öffnete. Weit ausgebreitet lagen die Elemente da: Stein, Erde, Wasser. Sie selbst fuhren im
+                        Schatten, aber die Sonne, hinter den Tessenberg gesunken, beschien
+                        noch den See, die Insel, die Hügel, die Vorgebirge, die Gletscher am Horizont und die
+                        übereinandergetürmten Wolkenungetüme, dahinschwimmend in den blauen Meeren des Himmels.
+                        Unbeirrbar
+                        schaute der Alte in dieses sich unaufhörlich ändernde
+                        Wetter des Vorwinters. Immer dasselbe, dachte er, wie es sich auch ändert, immer dasselbe.”
+                    </legend>
+                    <br><br><br>
+                    <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
+                    <label for="inputAnswer1">Zeitdehnung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
+                    <label for="inputAnswer2">Zeittraffung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
+                    <label for="inputAnswer3">Zeitdeckung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
+                    <label for="inputAnswer4">Vorausdeutung</label>
+
+                    <button hidden></button>
+                </fieldset>
+            </div>
+            <div class="divTxt" id="divZeitstrukturQuiz1Question2">
+                <fieldset>
+                    <legend>
+                        <h1>Erzähltempo - Verhältnis zwischen Erzählzeit und erzählte Zeit.</h1>
+                        Beispiel aus dem Text: “»Gastmann ist nicht der Mörder«, sagte Bärlach trocken. »Die
+                        Möglichkeit
+                        besteht, daß Gastmann den Mord angeordnet hat. Wir müssen seine Diener vernehmen!« entgegnete
+                        Tschanz. »Ich sehe nicht den geringsten Grund, der Gastmann
+                        hätte veranlassen können, Schmied zu ermorden«, sagte der Alte. »Wir müssen den Täter dort
+                        suchen,
+                        wo die Tat einen Sinn hätte haben können, und dies geht nur den Bundesanwalt etwas an«, fuhr
+                        er
+                        fort. »Auch der Schriftsteller hält
+                        Gastmann für den Mörder«, rief Tschanz aus. »Auch du hältst ihn dafür?» fragte Bärlach
+                        lauernd.
+                        »Auch ich, Kommissär.« »Dann du allein«,”
+                    </legend>
+                    <br><br><br>
+                    <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
+                    <label for="inputAnswer1">Zeitraffung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
+                    <label for="inputAnswer2">Zeitdehnung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
+                    <label for="inputAnswer3">Zeitdeckung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
+                    <label for="inputAnswer4">Rückblende</label>
+
+                    <button hidden></button>
+                </fieldset>
+            </div>
+            <div class="divTxt" id="divZeitstrukturQuiz1Question3">
+                <fieldset>
+                    <legend>
+                        <h1>Analyse der Erzählzeit.</h1>Es dürfte das letzte Mal gewesen sein, dass er in Ruhe einen
+                        Kaffee
+                        trinken konnte.
+                    </legend>
+                    <br><br><br>
+                    <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
+                    <label for="inputAnswer1">Parallelhandlung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
+                    <label for="inputAnswer2">Rückblende</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
+                    <label for="inputAnswer3">Vorausdeutung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
+                    <label for="inputAnswer4">Zeitdehnung</label>
+
+                    <button hidden></button>
+                </fieldset>
+            </div>
+            <div class="divTxt" id="divZeitstrukturQuiz1Question4">
+                <fieldset>
+                    <legend>
+                        <h1>Analyse der Erzählzeit.</h1>Zur gleichen Zeit wie Peter in New York einen Kaffee trank,
+                        schrieb
+                        Kurt in Bern an seiner Doktorarbeit.
+                    </legend>
+                    <br><br><br>
+                    <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
+                    <label for="inputAnswer1">Vorausdeutung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
+                    <label for="inputAnswer2">Parallelhandlung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
+                    <label for="inputAnswer3">Rückblende</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
+                    <label for="inputAnswer4">Zeittraffung</label>
+
+                    <button hidden></button>
+                </fieldset>
+            </div>
+            <div class="divTxt" id="divZeitstrukturResults">
+
+                <b class="txtStandard" id="txtZeitstrukturResults">
+                    Hier seht Ihr Eure Ergebnisse vom Quiz. Bitte wartet auf die anderen Mitglieder und fahrt gemeinsam
+                    fort, indem Ihr gemeinsam auf den Weiter-Button klickt.
+                </b>
+                <br>
+
+            </div>
+            <div class="divTxt" id="divZeitstrukturExerciseIntro">
+
+                <b class="txtStandard" id="txtZeitstrukturExercise">
+                    Bitte denkt Euch nun in Eurer zuvor gebildeten Teilgruppe ein kleinen Text aus, welcher das von Euch
+                    gewähltes Erzähltempo anwendet. Schreibt den Text bitte auf eine der leeren Blätter, welche auf
+                    dem
+                    Tisch liegen. Aus zeitlichen Gründen sollte der Text nicht länger als ungefähr fünf Sätze
+                    beinhalten.
+                    Sofern Ihr als Teilgruppe fertig seid, wartet bitte auf die andere Teilgruppe und klickt dann auf
+                    den
+                    Weiter-Button.
+                </b>
+
+            </div>
+            <div class="divTxt" id="divZeitstrukturExerciseDiscuss">
+
+                <b class="txtStandard" id="txtZeitstrukturExerciseDiscuss">
+                    Ließt Euch nun bitte innerhalb Eurer Teilgruppe den Text der anderen Teilgruppe durch. Wenn Ihr mit
+                    dem
+                    Lesen fertig seid, bestimmt jede Teilgruppe bitte, welches Erzähltempo die andere Teilgruppe
+                    gewählt
+                    hat.
+                </b>
+
+            </div>
+            <div class="divTxt" id="divZeitstrukturExerciseGuess">
+
+                <b class="txtStandard" id="txtZeitstrukturExerciseGuess">
+                    Teilt als Teilgruppe der anderen Teilgruppe das von Euch vermutete Erzähltempo mit. Fahrt
+                    unabhängig
+                    von
+                    der Richtigkeit der Antwort der anderen Teilgruppe gemeinsam als ganze Gruppe mit der nächsten
+                    Seite
+                    fort.
+                </b>
+
+            </div>
+
+            <div class="divTxt" id="divHandlungsstrukturRead1">
+
+                <b class="txtStandard" id="txtZeitstrukturRead">
+                    <strong>Auf dieser und folgenden Seiten sind die Inhalte zum Thema Handlungsstruktur in Kurzform
+                        aufgeführt.</strong>
+                    <br>1. <strong>Handlungsstruktur (Handlungsstrang)</strong> - Der Vorgang der erzählten Geschichte
+                    wird
+                    in mehrere Teile gegliedert.
+                    <br>2. <strong>Chronologischer Zeitablauf</strong> der Geschichte - die Erzählung der Chronologie
+                    fängt
+                    von Anfang an und hinten hört auf. Dazwischen werden die Ereignisse in chronologischer Reihenfolge
+                    präsentiert.
+                    <br>3. <strong>Zeitsprüngen</strong> - In der Geschichte wird ein Zeitabschnitt der Handlung
+                    übersprungen. Von diesem Teil der erzählten Handlung wird gar nicht berichtet, die Lesezeit bzw.
+                    Erzählzeit beträgt also null.
+
+                    <br>4. <strong>Climax (Höhepunkt)</strong> - Den Punkt, an dem sich das Geschehen eines Textes auf
+                    dem
+                    Höhepunkt befindet, bezeichnet man als climax. Diese ist eine Krise (crisis)
+                    oder Katastrophe, die sich ereignet und zugleich dafür verantwortlich ist, dass sich das
+                    Kräfteverhältnis der handelnden Figuren zueinander verschiebt. Zugleich stellt sie einen turning
+                    point
+                    (Wendepunkt) im Geschehen dar.
+
+                    <br>5. <strong>Handlungsstrang</strong> hierunter werden die in besonderer Form miteinander
+                    verbundene
+                    und deshalb mehr oder weniger eigenständige, sinnhaft verknüpfte Ereignisfolgen verstanden, die in
+                    einem
+                    erzählerischen Werk, im weitesten Sinn, auftreten.
+                </b>
+
+            </div>
+            <div class="divTxt" id="divHandlungsstrukturRead2">
+
+                <b class="txtStandard" id="txtZeitstrukturRead">
+                    Das folgende Video vermittelt Inhalte zum Thema Handlungsstruktur. Schaut Euch bitte dieses Video
+                    individuell oder zusammen an.
+
+                    <iframe id="iframeVideo" style="margin-bottom: 100px;" width="950" height="526"
+                        src="https://www.youtube.com/embed/BGPIE5wNl94" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <br>
+                </b>
+            </div>
+            <div class="divTxt" id="divHandlungsstrukturQuiz1Question1">
+                <fieldset>
+                    <legend>
+                        <h1>Was ist eine Handlungsstruktur?</h1>
+                    </legend>
+                    <br><br><br>
+                    <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
+                    <label for="inputAnswer1">Aufbau der Geschichte</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
+                    <label for="inputAnswer2">Die Hülle der Geschichte, wie die Haut und Knochen eines Menschen. Sie
+                        kann
+                        erkundet und nachgezeichnet werden, um die kritischen Ereignisse des Romans herauszufiltern.
+                        Zudem
+                        trägt sie zu einem besseren Lesevergnügen bei, da sie der Geschichte Spannung, Überraschung
+                        und
+                        Schockmomente schenkt.</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
+                    <label for="inputAnswer3">Der Vorgang der erzählten Geschichte wird in mehrere Teile gegliedert.
+                        Handlungsstrang hierunter werden die in besonderer Form miteinander verbundene und deshalb mehr
+                        oder
+                        weniger eigenständige, sinnhaft verknüpfte Ereignisfolgen verstanden, die in einem
+                        erzählerischen
+                        Werk, im weitesten Sinn, auftreten.</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
+                    <label for="inputAnswer4">Eine chronologische Abfolge von Ereignissen</label>
+
+                    <button hidden></button>
+                </fieldset>
+            </div>
+            <div class="divTxt" id="divHandlungsstrukturQuiz1Question2">
+                <fieldset>
+                    <legend>
+                        <h1>Wie nennt man den Punkt, an dem sich das Geschehen eines Textes auf dem Höhepunkt befindet?
+                        </h1>
+                    </legend>
+                    <br><br><br>
+                    <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
+                    <label for="inputAnswer1">Zeitsprung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
+                    <label for="inputAnswer2">Climax</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
+                    <label for="inputAnswer3">Chronologischer Zeitablauf</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
+                    <label for="inputAnswer4">Handlungsstrang</label>
+
+                    <button hidden></button>
+                </fieldset>
+            </div>
+            <div class="divTxt" id="divHandlungsstrukturQuiz1Question3">
+                <fieldset>
+                    <legend>
+                        <h1>Die Erzählung der Chronologie fängt von Anfang an und hinten hört auf. Dazwischen werden
+                            die
+                            Ereignisse in chronologischer Reihenfolge präsentiert.</h1>
+                    </legend>
+                    <br><br><br>
+                    <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
+                    <label for="inputAnswer1">Chronologischer Zeitablauf der Geschichte</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
+                    <label for="inputAnswer2">Zeitsprung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
+                    <label for="inputAnswer3">Climax</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
+                    <label for="inputAnswer4">Handlungsstrang</label>
+
+                    <button hidden></button>
+                </fieldset>
+            </div>
+            <div class="divTxt" id="divHandlungsstrukturQuiz1Question4">
+                <fieldset>
+                    <legend>
+                        <h1>In der Geschichte wird ein Zeitabschnitt der Handlung übersprungen. Von diesem Teil der
+                            erzählten Handlung wird gar nicht berichtet, die Lesezeit bzw. Erzählzeit beträgt also
+                            null.
+                        </h1>
+                    </legend>
+                    <br><br><br>
+                    <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
+                    <label for="inputAnswer1">Climax (Höhepunkt)</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
+                    <label for="inputAnswer2">Zeitsprung</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
+                    <label for="inputAnswer3">Hundlungsstrang</label>
+                    <br>
+                    <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
+                    <label for="inputAnswer4">Handlungsstruktur</label>
+
+                    <button hidden></button>
+                </fieldset>
+            </div>
+            <div class="divTxt" id="divHandlungsstrukturResults">
+
+                <b class="txtStandard" id="txtHandlungsstrukturResults">
+                    Hier seht Ihr Eure Ergebnisse vom Quiz. Bitte wartet auf die anderen Mitglieder und fahrt gemeinsam
+                    fort, indem Ihr gemeinsam auf den Weiter-Button klickt.
+                </b>
+                <br>
+
+            </div>
+            <div class="divTxt" id="divOutro">
+                <b class="txtStandard">
+                    Vielen Dank, dass Ihr an dem Workshop teilgenommen habt. Wir hoffen, Ihr habt etwas lernen können.
+                    ;)
+                </b>
+            </div>
+
         </div>
-        <div class="divTxt" id="divPath">
-            <b class="txtStandard" id="txtPath">
-            Zunächst erhälst Du einen kurzen Überblick über den Ablauf des Workshops. Die folgende Darstellung beschreibt den groben Ablauf. Genauere Informationen darüber, was als nächstes zu tun ist, erhälst Du im Laufe des Workshops.
 
-
-
-            1. Gruppeneinteilung
-
-            2. Infos zum Thema: Zeitstruktur
-            3. Aufgaben
-            4. Quiz-Fragen
-            5. Kreatives Spiel
-
-            6. Infos zum Thema: Handlungsstruktur
-            7. Aufgaben
-            8. Quiz-Fragen
-        </b>
-        </div>
-        <div class="divTxt" id="divSeparation">
-            <b class="txtStandard" id="txtSeparation">
-            Bitte teilt Euch in zwei Teilgruppen auf. Anschließend sucht sich bitte jede Teilgruppe hintereinander eine Karte zum Thema Erzähltempo aus.
-            Die jeweils andere Teilgruppe dreht sich bitte um, damit sie die Wahl nicht sehen kann. Die Karten dafür liegen auf dem Tisch.
-        </b>
-            <div class="center-content">
-                <img id="imgSeparation" src="https://www.cmshs-bloggt.de/wp-content/uploads/2018/07/005836_lo-res-600x400.jpg">
+        <div id="divBottom">
+            <b id="txtStopwatch"></b>
+            <div>
+                <div class="divBtns2">
+                    <button class="btnStandard" id="btnContinue" style="margin-left: 0;"
+                        onclick="OnClickBtnContinue(++sequenceCounter)">START</button>
+                    <button class="btnStandard" id="btnBack"
+                        onclick="OnClickBtnContinue(--sequenceCounter)">ZURÜCK</button>
+                </div>
             </div>
         </div>
-
-        <div class="divTxt" id="divZeitstrukturWatch">
-
-            <b class="txtStandard" id="txtZeitstrukturWatch">
-            Das folgende Video vermittelt Inhalte zum Thema Zeitstruktur. Schaut Euch bitte dieses Video individuell oder zusammen an.
-        </b>
-            <div class="center-content">
-                <iframe id="iframeVideo" style="margin-bottom: 100px;" width="950" height="526" src="https://www.youtube.com/embed/hHX79uz0qck" title="Erzähltechnik - Zeitgestaltung -Erzählte Zeit und Erzählzeit - Erzähltechniken in der Epik erklärt!" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-
-        </div>
-        <div class="divTxt" id="divZeitstrukturRead1">
-            <b class="txtStandard" id="txtZeitstrukturRead1">
-            Auf dieser und folgenden Seiten sind die Inhalte zum Thema Zeitstruktur in Spielform aufgeführt. Bitte ließt Euch diese Texte individuell oder zusammen durch.
-
-
-
-
-
-            Die <strong>Zeit</strong> bestimmt, ob und inwieweit die Geschichte historisch verortet ist, ob sie sich klar erkennbar einer historischen Situation zuordnen lässt und welche Bedeutung diese Situation für das erzählte Geschehen hat.
-
-            Die <strong>Erzählzeit</strong> entspricht der Zeit, die man braucht, um den Text zu lesen.
-
-            Die <strong>Erzählte Zeit</strong> ist der Zeitraum, in dem sich das erzählte Geschehen abspielt.
-
-            <a class="quiz-btn" href="https://quizlet.com/731874333/learn" target="_blank">Start Quizlet</a>
-
-        </b>
-        </div>
-        <div class="divTxt" id="divZeitstrukturRead2">
-
-            <b class="txtStandard" id="txtZeitstrukturRead2">
-            Grundsätzlich spricht man von drei <strong>Erzähltempo</strong>, in denen Texte oder Teile von Texten ablaufen können. Entspricht die Erzählzeit der erzählten Zeit, so liegt eine Zeitdeckung vor. Ist die Erzählzeit kürzer als die erzählte Zeit, hat man es mit einer Zeitraffung zu tun, im umgekehrten Fall mit einer Zeitdehnung.
-
-
-
-
-
-            Eine <strong>Zeitdeckung</strong> liegt vor, wenn die Erzählzeit und die erzählte Zeit sich im spezifischen Erzählen decken.
-
-            Bei einer <strong>Zeitraffung</strong> ist die Erzählzeit kürzer als die erzählte Zeit, wenn Zeitspannen übersprungen oder Vorgänge stark zusammengefasst wiedergegeben werden. Beispiel: "Nun verlor der ander die Geduld.  Er packte ..".
-
-            Bei einer <strong>Zeitdehnung</strong> hingegen ist die Erzählzeit länger als die erzählte Zeit. Z.B. wenn die Gedanken und Gefühle einer Figur in einem kurzen Handlungsmoment ausführlich wiedergegeben werden.
-
-
-            <a class="quiz-btn" href="https://quizlet.com/731874333/match" target="_blank">Start Quizlet</a>
-        </b>
-        </div>
-        <div class="divTxt" id="divZeitstrukturQuiz1Question1">
-            <fieldset>
-                <legend>
-                    <h1>Erzähltempo - Verhältnis zwischen Erzählzeit und erzählte Zeit.</h1>
-                    “Sie fuhren gegen Ligerz hinunter, hinein in ein Land, das sich ihnen in einer ungeheuren Tiefe öffnete. Weit ausgebreitet lagen die Elemente da: Stein, Erde, Wasser. Sie selbst fuhren im Schatten, aber die Sonne, hinter den Tessenberg gesunken, beschien
-                    noch den See, die Insel, die Hügel, die Vorgebirge, die Gletscher am Horizont und die übereinandergetürmten Wolkenungetüme, dahinschwimmend in den blauen Meeren des Himmels. Unbeirrbar schaute der Alte in dieses sich unaufhörlich ändernde
-                    Wetter des Vorwinters. Immer dasselbe, dachte er, wie es sich auch ändert, immer dasselbe.”
-                </legend>
-                <br><br><br>
-                <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
-                <label for="inputAnswer1">Zeitdehnung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
-                <label for="inputAnswer2">Zeittraffung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
-                <label for="inputAnswer3">Zeitdeckung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
-                <label for="inputAnswer4">Vorausdeutung</label>
-
-                <button hidden></button>
-            </fieldset>
-        </div>
-        <div class="divTxt" id="divZeitstrukturQuiz1Question2">
-            <fieldset>
-                <legend>
-                    <h1>Erzähltempo - Verhältnis zwischen Erzählzeit und erzählte Zeit.</h1>
-                    Beispiel aus dem Text: “»Gastmann ist nicht der Mörder«, sagte Bärlach trocken. »Die Möglichkeit besteht, daß Gastmann den Mord angeordnet hat. Wir müssen seine Diener vernehmen!« entgegnete Tschanz. »Ich sehe nicht den geringsten Grund, der Gastmann
-                    hätte veranlassen können, Schmied zu ermorden«, sagte der Alte. »Wir müssen den Täter dort suchen, wo die Tat einen Sinn hätte haben können, und dies geht nur den Bundesanwalt etwas an«, fuhr er fort. »Auch der Schriftsteller hält
-                    Gastmann für den Mörder«, rief Tschanz aus. »Auch du hältst ihn dafür?» fragte Bärlach lauernd. »Auch ich, Kommissär.« »Dann du allein«,”
-                </legend>
-                <br><br><br>
-                <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
-                <label for="inputAnswer1">Zeitraffung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
-                <label for="inputAnswer2">Zeitdehnung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
-                <label for="inputAnswer3">Zeitdeckung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
-                <label for="inputAnswer4">Rückblende</label>
-
-                <button hidden></button>
-            </fieldset>
-        </div>
-        <div class="divTxt" id="divZeitstrukturQuiz1Question3">
-            <fieldset>
-                <legend>
-                    <h1>Analyse der Erzählzeit.</h1>Es dürfte das letzte Mal gewesen sein, dass er in Ruhe einen Kaffee trinken konnte.</legend>
-                <br><br><br>
-                <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
-                <label for="inputAnswer1">Parallelhandlung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
-                <label for="inputAnswer2">Rückblende</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
-                <label for="inputAnswer3">Vorausdeutung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
-                <label for="inputAnswer4">Zeitdehnung</label>
-
-                <button hidden></button>
-            </fieldset>
-        </div>
-        <div class="divTxt" id="divZeitstrukturQuiz1Question4">
-            <fieldset>
-                <legend>
-                    <h1>Analyse der Erzählzeit.</h1>Zur gleichen Zeit wie Peter in New York einen Kaffee trank, schrieb Kurt in Bern an seiner Doktorarbeit.
-                </legend>
-                <br><br><br>
-                <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
-                <label for="inputAnswer1">Vorausdeutung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
-                <label for="inputAnswer2">Parallelhandlung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
-                <label for="inputAnswer3">Rückblende</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
-                <label for="inputAnswer4">Zeittraffung</label>
-
-                <button hidden></button>
-            </fieldset>
-        </div>
-        <div class="divTxt" id="divZeitstrukturResults">
-
-            <b class="txtStandard" id="txtZeitstrukturResults">
-            Hier seht Ihr Eure Ergebnisse vom Quiz. Bitte wartet auf die anderen Mitglieder und fahrt gemeinsam fort, indem Ihr gemeinsam auf den Weiter-Button klickt.
-        </b>
-            <br>
-
-        </div>
-        <div class="divTxt" id="divZeitstrukturExerciseIntro">
-
-            <b class="txtStandard" id="txtZeitstrukturExercise">
-            Bitte denkt Euch nun in Eurer zuvor gebildeten Teilgruppe ein kleinen Text aus, welcher das von Euch gewähltes Erzähltempo anwendet. Schreibt den Text bitte auf eine der leeren Blätter, welche auf dem Tisch liegen. Aus zeitlichen Gründen sollte der Text nicht länger als ungefähr fünf Sätze beinhalten. Sofern Ihr als Teilgruppe fertig seid, wartet bitte auf die andere Teilgruppe und klickt dann auf den Weiter-Button.
-        </b>
-
-        </div>
-        <div class="divTxt" id="divZeitstrukturExerciseDiscuss">
-
-            <b class="txtStandard" id="txtZeitstrukturExerciseDiscuss">
-            Ließt Euch nun bitte innerhalb Eurer Teilgruppe den Text der anderen Teilgruppe durch. Wenn Ihr mit dem Lesen fertig seid, bestimmt jede Teilgruppe bitte, welches Erzähltempo die andere Teilgruppe gewählt hat.
-        </b>
-
-        </div>
-        <div class="divTxt" id="divZeitstrukturExerciseGuess">
-
-            <b class="txtStandard" id="txtZeitstrukturExerciseGuess">
-            Teilt als Teilgruppe der anderen Teilgruppe das von Euch vermutete Erzähltempo mit. Fahrt unabhängig von der Richtigkeit der Antwort der anderen Teilgruppe gemeinsam als ganze Gruppe mit der nächsten Seite fort.
-        </b>
-
-        </div>
-
-        <div class="divTxt" id="divHandlungsstrukturRead1">
-
-            <b class="txtStandard" id="txtZeitstrukturRead">
-            <strong>Auf dieser und folgenden Seiten sind die Inhalte zum Thema Handlungsstruktur in Kurzform aufgeführt.</strong>
-            <br>1. <strong>Handlungsstruktur (Handlungsstrang)</strong> - Der Vorgang der  erzählten Geschichte wird in mehrere Teile gegliedert. 
-            <br>2. <strong>Chronologischer Zeitablauf</strong> der Geschichte - die Erzählung der Chronologie fängt  von Anfang an und hinten hört auf. Dazwischen werden die Ereignisse in chronologischer Reihenfolge präsentiert.
-            <br>3. <strong>Zeitsprüngen</strong> -  In der Geschichte wird ein Zeitabschnitt der Handlung übersprungen. Von diesem Teil der erzählten Handlung wird gar nicht berichtet, die Lesezeit bzw. Erzählzeit beträgt also null.
-
-            <br>4. <strong>Climax (Höhepunkt)</strong> - Den Punkt, an dem sich das Geschehen eines Textes auf dem Höhepunkt befindet, bezeichnet man als climax. Diese ist eine Krise (crisis)
-            oder Katastrophe, die sich ereignet und zugleich dafür verantwortlich ist, dass sich das Kräfteverhältnis der handelnden Figuren zueinander verschiebt. Zugleich stellt sie einen turning point (Wendepunkt) im Geschehen dar.
-            
-            <br>5. <strong>Handlungsstrang</strong> hierunter werden die in besonderer Form miteinander verbundene und deshalb mehr oder weniger eigenständige, sinnhaft verknüpfte Ereignisfolgen verstanden, die in einem erzählerischen Werk, im weitesten Sinn, auftreten.
-        </b>
-
-        </div>
-        <div class="divTxt" id="divHandlungsstrukturRead2">
-
-            <b class="txtStandard" id="txtZeitstrukturRead">
-                Das folgende Video vermittelt Inhalte zum Thema Handlungsstruktur. Schaut Euch bitte dieses Video individuell oder zusammen an.
-        
-            <iframe id="iframeVideo" style="margin-bottom: 100px;" width="950" height="526" src="https://www.youtube.com/embed/BGPIE5wNl94" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <br>
-        </b>
-        </div>
-        <div class="divTxt" id="divHandlungsstrukturQuiz1Question1">
-            <fieldset>
-                <legend>
-                    <h1>Was ist eine Handlungsstruktur?</h1>
-                </legend>
-                <br><br><br>
-                <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
-                <label for="inputAnswer1">Aufbau der Geschichte</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
-                <label for="inputAnswer2">Die Hülle der Geschichte, wie die Haut und Knochen eines Menschen. Sie kann erkundet und nachgezeichnet werden, um die kritischen Ereignisse des Romans herauszufiltern. Zudem trägt sie zu einem besseren Lesevergnügen bei, da sie der Geschichte Spannung, Überraschung und Schockmomente schenkt.</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
-                <label for="inputAnswer3">Der Vorgang der  erzählten Geschichte wird in mehrere Teile gegliedert. 
-                Handlungsstrang hierunter werden die in besonderer Form miteinander verbundene und deshalb mehr oder weniger eigenständige, sinnhaft verknüpfte Ereignisfolgen verstanden, die in einem erzählerischen Werk, im weitesten Sinn, auftreten.</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
-                <label for="inputAnswer4">Eine chronologische Abfolge von Ereignissen</label>
-
-                <button hidden></button>
-            </fieldset>
-        </div>
-        <div class="divTxt" id="divHandlungsstrukturQuiz1Question2">
-            <fieldset>
-                <legend>
-                    <h1>Wie nennt man den Punkt, an dem sich das Geschehen eines Textes auf dem Höhepunkt befindet?</h1>
-                </legend>
-                <br><br><br>
-                <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
-                <label for="inputAnswer1">Zeitsprung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
-                <label for="inputAnswer2">Climax</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
-                <label for="inputAnswer3">Chronologischer Zeitablauf</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
-                <label for="inputAnswer4">Handlungsstrang</label>
-
-                <button hidden></button>
-            </fieldset>
-        </div>
-        <div class="divTxt" id="divHandlungsstrukturQuiz1Question3">
-            <fieldset>
-                <legend>
-                    <h1>Die Erzählung der Chronologie fängt von Anfang an und hinten hört auf. Dazwischen werden die Ereignisse in chronologischer Reihenfolge präsentiert.</h1>
-                </legend>
-                <br><br><br>
-                <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
-                <label for="inputAnswer1">Chronologischer Zeitablauf der Geschichte</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
-                <label for="inputAnswer2">Zeitsprung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
-                <label for="inputAnswer3">Climax</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
-                <label for="inputAnswer4">Handlungsstrang</label>
-
-                <button hidden></button>
-            </fieldset>
-        </div>
-        <div class="divTxt" id="divHandlungsstrukturQuiz1Question4">
-            <fieldset>
-                <legend>
-                    <h1>In der Geschichte wird ein Zeitabschnitt der Handlung übersprungen. Von diesem Teil der erzählten Handlung wird gar nicht berichtet, die Lesezeit bzw. Erzählzeit beträgt also null.</h1>
-                </legend>
-                <br><br><br>
-                <input class="radioBtn" id="inputAnswer1" type="radio" value="1">
-                <label for="inputAnswer1">Climax (Höhepunkt)</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer2" type="radio" value="2">
-                <label for="inputAnswer2">Zeitsprung</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer3" type="radio" value="3">
-                <label for="inputAnswer3">Hundlungsstrang</label>
-                <br>
-                <input class="radioBtn" id="inputAnswer4" type="radio" value="4">
-                <label for="inputAnswer4">Handlungsstruktur</label>
-
-                <button hidden></button>
-            </fieldset>
-        </div>
-        <div class="divTxt" id="divHandlungsstrukturResults">
-
-            <b class="txtStandard" id="txtHandlungsstrukturResults">
-            Hier seht Ihr Eure Ergebnisse vom Quiz. Bitte wartet auf die anderen Mitglieder und fahrt gemeinsam fort, indem Ihr gemeinsam auf den Weiter-Button klickt.
-        </b>
-            <br>
-
-        </div>
-        <div class="divTxt" id="divOutro">
-            <b class="txtStandard">
-            Vielen Dank, dass Ihr an dem Workshop teilgenommen habt. Wir hoffen, Ihr habt etwas lernen können. ;)
-        </b>
-        </div>
-        <div class="btn-row">
-            <button id="back_btn" class="btnStandard">ZURÜCK</button>
-            <button class="btnStandard" id="btnContinue" onclick="OnClickBtnContinue()">START</button>
-        </div>
-
-        <b id="txtStopwatch"></b>
-        <!-- <button id="naviBtn1" onclick="OnClickBtnIntro()">Einführung</button> -->
-        <!-- <button class="naviBtn2" onclick="OnClickBtnInfo()">Informationen</button> -->
-        <!-- <button class="naviBtn2" onclick="OnClickBtnTest()">Test</button> -->
-
     </div>
 </body>
 <script>
     // declares / initializes  globals
     var sequenceCounter = 0;
+    let _quizCounter = 1;
+    let _questionCounter = 1;
     var currentTimerId;
-    var quizAnswers = [];
+    var timerStates = {};
+    var quizAnswersZeitstrukturCalculated = false;
+    var quizAnswersHandlungsstruktur1Calculated = false;
+    var quizAnswersHandlungsstruktur2Calculated = false;
+    var quizAnswers = {};
     const rightAnswers = {
-            1: "1",
-            2: "3",
-            3: "3",
-            4: "2",
-            5: "3",
-            6: "2",
-            7: "1",
-            8: "2"
-        }
-        // gets elements : divisions : preparation
+        1: "1",
+        2: "3",
+        3: "3",
+        4: "2",
+        5: "3",
+        6: "2",
+        7: "1",
+        8: "2"
+    }
+    // gets elements : divisions : preparation
     const divIntro = document.getElementById("divIntro");
     const divPath = document.getElementById("divPath");
     const divSeparation = document.getElementById("divSeparation");
@@ -535,7 +663,7 @@
     const divHandlungsstrukturResults = document.getElementById("divHandlungsstrukturResults");
     // gets elements : buttons, texts
     const btnContinue = document.getElementById("btnContinue");
-    const btnBack = document.getElementById("back_btn");
+    const btnBack = document.getElementById("btnBack");
     const txtStopwatch = document.getElementById("txtStopwatch");
     const btnQuiz1 = divZeitstrukturQuiz1Question1.getElementsByTagName("button")[0];
     const btnQuiz2 = divZeitstrukturQuiz1Question2.getElementsByTagName("button")[0];
@@ -545,8 +673,6 @@
     const btnQuiz6 = divHandlungsstrukturQuiz1Question2.getElementsByTagName("button")[0];
     const btnQuiz7 = divHandlungsstrukturQuiz1Question3.getElementsByTagName("button")[0];
     const btnQuiz8 = divHandlungsstrukturQuiz1Question4.getElementsByTagName("button")[0];
-
-    btnBack.onclick = OnClickBtnContinue;
 
     // plays alarm sound
     function alarm() {
@@ -565,12 +691,17 @@
     }
     // starts a timer, which counts down
     function startTimer(callback, startMinute, startSecond = 0) {
-
         let currentMinute = startMinute;
         let currentSecond = startSecond;
-        const element = document.getElementById("txtStopwatch");
-        element.innerHTML = `${currentMinute > 9 ? currentMinute : "0" + currentMinute}:${currentSecond > 9 ? currentSecond : "0" + currentSecond}`;
-        currentTimerId = setInterval(function() {
+        if (sequenceCounter in timerStates) {
+            let timerStateMinute = timerStates[sequenceCounter][0];
+            let timerStateSecond = timerStates[sequenceCounter][1];
+            currentMinute = timerStateMinute;
+            currentSecond = timerStateSecond;
+        }
+        txtStopwatch.style.display = "block";
+        txtStopwatch.innerHTML = `${currentMinute > 9 ? currentMinute : "0" + currentMinute}:${currentSecond > 9 ? currentSecond : "0" + currentSecond}`;
+        currentTimerId = setInterval(function () {
             if (currentSecond === 0) {
                 if (currentMinute > 0) {
                     currentMinute--;
@@ -582,19 +713,25 @@
                 }
             }
             currentSecond--;
-            element.innerHTML = `${currentMinute > 9 ? currentMinute : "0" + currentMinute}:${currentSecond > 9 ? currentSecond : "0" + currentSecond}`;
+            txtStopwatch.innerHTML = `${currentMinute > 9 ? currentMinute : "0" + currentMinute}:${currentSecond > 9 ? currentSecond : "0" + currentSecond}`;
+            timerStates[`${sequenceCounter}`] = [currentMinute, currentSecond];
         }, 1000);
-
     }
     // captures the answer of a quiz
     function captureAnswer(rootElement) {
+        let hasAnswer = false;
         const radioBtns = rootElement.getElementsByTagName("input");
         for (let i = 0; i < radioBtns.length; i++) {
             const radioBtn = radioBtns[i];
             if (radioBtn.checked) {
-                quizAnswers.push(radioBtn.value);
+                quizAnswers[`${_questionCounter++}`] = radioBtn.value; // todo: Bei zur�ck gehen und ausw�hlen einer neuen Antwort, ist der questionCounter aber erh�ht. Irgendwie checken, ob die Sequence die gleiche ist
+                hasAnswer = true;
             }
         }
+        if (!hasAnswer) {
+            quizAnswers[`${_questionCounter++}`] = undefined;
+        }
+        return hasAnswer;
     }
     // calculates the results of the exercises and quizes
     function calculateResults(rootElement, maxQuestion) {
@@ -604,8 +741,8 @@
         }
         for (let i = startIndex; i <= maxQuestion; i++) {
             const resultRow = document.createElement("b");
-            resultRow.innerHTML = `Thema: ${maxQuestion > 4 ? "Handlungsstruktur" : "Zeitstruktur"} | Frage: ${i} | Deine Antwort: ${quizAnswers[i-1] == undefined ? "keine Antwort" : quizAnswers[i-1]} | Richtige Antwort: ${rightAnswers[i]}`;
-            if (rightAnswers[i] === quizAnswers[i - 1]) {
+            resultRow.innerHTML = `Thema: ${maxQuestion > 4 ? "Handlungsstruktur" : "Zeitstruktur"} | Frage: ${i} | Deine Antwort: ${quizAnswers[i] == undefined ? "keine Antwort" : quizAnswers[i]} | Richtige Antwort: ${rightAnswers[i]}`;
+            if (rightAnswers[i] === quizAnswers[i]) {
                 resultRow.setAttribute("class", "resultRowRight");
             } else {
                 resultRow.setAttribute("class", "resultRowWrong");
@@ -614,25 +751,44 @@
             rootElement.appendChild(resultRow);
         }
     }
+    // turns off all divisions in the root
+    function turnOffElementsInRoot() {
+        const rootElements = document.getElementById("root").getElementsByClassName("divTxt");
+        for (element of rootElements) {
+            element.style.display = "none";
+        }
+    }
+
+    while (_quizCounter <= 8) {
+        let _root = "";
+        if (_quizCounter < 5) {
+            _root = document.getElementById(`divZeitstrukturQuiz1Question${_questionCounter}`);;
+        }
+        else if (_quizCounter > 4) {
+            _questionCounter = 1;
+            _root = document.getElementById(`divHandlungsstrukturQuiz1Question${_questionCounter}`);;
+        }
+        const radioBtns = _root.getElementsByTagName("input");
+        for (const radioBtn of radioBtns) {
+            radioBtn.onchange = function () {
+                for (const _radioBtn of radioBtns) {
+                    if (_radioBtn != radioBtn) {
+                        _radioBtn.checked = false;
+                    }
+                }
+            }
+        }
+        _questionCounter++;
+        _quizCounter++;
+    }
+    _questionCounter = 1;
+
     // executes, when the continue button is clicked and starts the next sequence
-    function OnClickBtnContinue(e) {
-        console.log(e)
-            // clears the time of the current timer according to the id (standard library)
+    function OnClickBtnContinue(sequenceCounter) {
+        // clears the time of the current timer according to the id (standard library)
         clearInterval(currentTimerId);
-        let btnElement;
-        if (e) {
-            --sequenceCounter
-        } else {
-            ++sequenceCounter
-        }
-        console.log(sequenceCounter, e)
-
-        const pageElement = document.getElementsByClassName("divTxt");
-
-        for (let i = 0; i < pageElement.length; i++) {
-            let el = pageElement[i];
-            el.style.display = 'none';
-        }
+        turnOffElementsInRoot();
+        txtStopwatch.style.display = "none";
 
         // checks which sequence to execute
         switch (sequenceCounter) {
@@ -643,131 +799,132 @@
                 btnContinue.style.display = "block";
                 btnBack.style.display = "none";
                 break;
-                // Sequence 02 : Workshop path overview
+            // Sequence 02 : Workshop path overview
             case 2:
                 // turns off visibilities
                 divIntro.style.display = "none";
                 // turns on visibilities
                 divPath.style.display = "block";
+                btnBack.style.display = "block";
                 // sets contents
                 btnContinue.innerHTML = "WEITER";
-                btnBack.style.display = "block";
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 1);
                 break;
-                // Sequence 03 : Group separation
+            // Sequence 03 : Group separation
             case 3:
                 // turns off visibilities
                 divPath.style.display = "none";
                 // turns off visibilities
                 divSeparation.style.display = "block";
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 40);
                 break;
-                // Sequence 04 : Watching of Zeitstruktur
+            // Sequence 04 : Watching of Zeitstruktur
             case 4:
                 // turns off visibilities
                 divSeparation.style.display = "none";
                 // turns on visibilities
                 divZeitstrukturWatch.style.display = "block";
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 5);
                 break;
-                // Sequence 05 : Reading of Zeitstruktur : Zeiten
+            // Sequence 05 : Reading of Zeitstruktur : Zeiten
             case 5:
                 // turns off visibilities
                 divZeitstrukturWatch.style.display = "none";
                 // turns on visibilities
                 divZeitstrukturRead1.style.display = "block";
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 06 : Reading of Zeitstruktur : Erzähltempos
+            // Sequence 06 : Reading of Zeitstruktur : Erzähltempos
             case 6:
                 // turns off visibilities
                 divZeitstrukturRead1.style.display = "none";
                 // turns on visibilities
                 divZeitstrukturRead2.style.display = "block";
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 45);
                 break;
-                // Sequence 07 : Quiz of Zeitstruktur 1
+            // Sequence 07 : Quiz of Zeitstruktur 1
             case 7:
                 // turns off visibilities
                 divZeitstrukturRead2.style.display = "none";
+                // btnContinue.disabled = true;
                 // turns on visibilities
                 divZeitstrukturQuiz1Question1.style.display = "block";
                 // executes, when the submit button of a quiz 1 was triggered and captures the answer
-                btnQuiz1.onclick = function() {
+                btnQuiz1.onclick = function () {
                     captureAnswer(divZeitstrukturQuiz1Question1);
                 };
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 08 : Quiz of Zeitstruktur 2
+            // Sequence 08 : Quiz of Zeitstruktur 2
             case 8:
                 // turns off visibilities
                 divZeitstrukturQuiz1Question1.style.display = "none";
                 // turns on visibilities
                 divZeitstrukturQuiz1Question2.style.display = "block";
                 // executes, when the submit button of a quiz 1 was triggered and captures the answer
-                btnQuiz2.onclick = function() {
+                btnQuiz2.onclick = function () {
                     captureAnswer(divZeitstrukturQuiz1Question2);
                 };
                 // captures the answer of the previous question
                 btnQuiz1.click();
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 09 : Quiz of Zeitstruktur 3
+            // Sequence 09 : Quiz of Zeitstruktur 3
             case 9:
                 // turns off visibilities
                 divZeitstrukturQuiz1Question2.style.display = "none";
                 // turns on visibilities
                 divZeitstrukturQuiz1Question3.style.display = "block";
                 // executes, when the submit button of a quiz 1 was triggered and captures the answer
-                btnQuiz3.onclick = function() {
+                btnQuiz3.onclick = function () {
                     captureAnswer(divZeitstrukturQuiz1Question3);
                 };
                 // captures the answer of the previous question
                 btnQuiz2.click();
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 10 : Quiz of Zeitstruktur 4
+            // Sequence 10 : Quiz of Zeitstruktur 4
             case 10:
                 // turns off visibilities
                 divZeitstrukturQuiz1Question3.style.display = "none";
                 // turns on visibilities
                 divZeitstrukturQuiz1Question4.style.display = "block";
                 // executes, when the submit button of a quiz 1 was triggered and captures the answer
-                btnQuiz4.onclick = function() {
+                btnQuiz4.onclick = function () {
                     captureAnswer(divZeitstrukturQuiz1Question4);
                 };
                 // captures the answer of the previous question
                 btnQuiz3.click();
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 11 : Results of Zeitstruktur
+            // Sequence 11 : Results of Zeitstruktur
             case 11:
                 // turns off visibilities
                 divZeitstrukturQuiz1Question4.style.display = "none";
@@ -776,134 +933,137 @@
                 // captures the answer of the previous question
                 btnQuiz4.click();
                 // calculates the results
-                calculateResults(divZeitstrukturResults, 4);
+                if (!quizAnswersZeitstrukturCalculated) {
+                    calculateResults(divZeitstrukturResults, 4);
+                    quizAnswersZeitstrukturCalculated = true;
+                }
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 12 : Exercise of Zeitstruktur : Introduction
+            // Sequence 12 : Exercise of Zeitstruktur : Introduction
             case 12:
                 // turns off visibilities
                 divZeitstrukturResults.style.display = "none";
                 // turns on visibilities
                 divZeitstrukturExerciseIntro.style.display = "block";
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 1, 30);
                 break;
-                // Sequence 13 : Exercise of Zeitstruktur : Discuss
+            // Sequence 13 : Exercise of Zeitstruktur : Discuss
             case 13:
                 // turns off visibilities
                 divZeitstrukturExerciseIntro.style.display = "none";
                 // turns on visibilities
                 divZeitstrukturExerciseDiscuss.style.display = "block";
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 1, 30);
                 break;
-                // Sequence 14 : Exercise of Zeitstruktur : Guess
+            // Sequence 14 : Exercise of Zeitstruktur : Guess
             case 14:
                 // turns off visibilities
                 divZeitstrukturExerciseDiscuss.style.display = "none";
                 // turns on visibilities
                 divZeitstrukturExerciseGuess.style.display = "block";
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 1, 30);
                 break;
-                // Sequence 15 : Reading of Handlungsstruktur : ...
+            // Sequence 15 : Reading of Handlungsstruktur : ...
             case 15:
                 // turns off visibilities
                 divZeitstrukturExerciseGuess.style.display = "none";
                 // turns on visibilities
                 divHandlungsstrukturRead1.style.display = "block";
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 1, 30);
                 break;
-                // Sequence 16 : Reading of Handlungsstruktur : ...
+            // Sequence 16 : Reading of Handlungsstruktur : ...
             case 16:
                 // turns off visibilities
                 divHandlungsstrukturRead1.style.display = "none";
                 // turns on visibilities
                 divHandlungsstrukturRead2.style.display = "block";
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 1, 30);
                 break;
-                // Sequence 17 : Quiz of Handlungsstruktur 1
+            // Sequence 17 : Quiz of Handlungsstruktur 1
             case 17:
                 // turns off visibilities
                 divHandlungsstrukturRead2.style.display = "none";
                 // turns on visibilities
                 divHandlungsstrukturQuiz1Question1.style.display = "block";
                 // executes, when the submit button of a quiz 2 was triggered and captures the answer
-                btnQuiz5.onclick = function() {
+                btnQuiz5.onclick = function () {
                     captureAnswer(divHandlungsstrukturQuiz1Question1);
                 };
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 18 : Quiz of Handlungsstruktur 2
+            // Sequence 18 : Quiz of Handlungsstruktur 2
             case 18:
                 // turns off visibilities
                 divHandlungsstrukturQuiz1Question1.style.display = "none";
                 // turns on visibilities
                 divHandlungsstrukturQuiz1Question2.style.display = "block";
                 // executes, when the submit button of a quiz 2 was triggered and captures the answer
-                btnQuiz6.onclick = function() {
+                btnQuiz6.onclick = function () {
                     captureAnswer(divHandlungsstrukturQuiz1Question2);
                 };
                 // captures the answer of the previous question
                 btnQuiz5.click();
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 19 : Quiz of Handlungsstruktur 3
+            // Sequence 19 : Quiz of Handlungsstruktur 3
             case 19:
                 // turns off visibilities
                 divHandlungsstrukturQuiz1Question2.style.display = "none";
                 // turns on visibilities
                 divHandlungsstrukturQuiz1Question3.style.display = "block";
                 // executes, when the submit button of a quiz 2 was triggered and captures the answer
-                btnQuiz7.onclick = function() {
+                btnQuiz7.onclick = function () {
                     captureAnswer(divHandlungsstrukturQuiz1Question3);
                 };
                 // captures the answer of the previous question
                 btnQuiz6.click();
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 20 : Quiz of Handlungsstruktur 4
+            // Sequence 20 : Quiz of Handlungsstruktur 4
             case 20:
                 // turns off visibilities
                 divHandlungsstrukturQuiz1Question3.style.display = "none";
                 // turns on visibilities
                 divHandlungsstrukturQuiz1Question4.style.display = "block";
                 // executes, when the submit button of a quiz 2 was triggered and captures the answer
-                btnQuiz8.onclick = function() {
+                btnQuiz8.onclick = function () {
                     captureAnswer(divHandlungsstrukturQuiz1Question4);
                 };
                 // captures the answer of the previous question
                 btnQuiz7.click();
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 21 : Results of Handlungsstruktur
+            // Sequence 21 : Results of Handlungsstruktur
             case 21:
                 btnContinue.style.display = "block";
                 // turns off visibilities
@@ -913,13 +1073,16 @@
                 // captures the answer of the previous question
                 btnQuiz8.click();
                 // calculates the results
-                calculateResults(divHandlungsstrukturResults, 8);
+                if (!quizAnswersHandlungsstruktur1Calculated) {
+                    calculateResults(divHandlungsstrukturResults, 8);
+                    quizAnswersHandlungsstruktur1Calculated = true;
+                }
                 // starts the timer
-                startTimer(function() {
+                startTimer(function () {
                     alarm();
                 }, 0, 30);
                 break;
-                // Sequence 22 : Outro
+            // Sequence 22 : Outro
             case 22:
                 // turns off visibilities
                 divHandlungsstrukturResults.style.display = "none";
@@ -928,11 +1091,10 @@
                 divOutro.style.display = "block";
                 // captures the answer of the previous question
                 btnQuiz8.click();
-                // calculates the results
-                calculateResults(divHandlungsstrukturResults, 8);
                 break;
         }
     }
     // initiates the first sequence (overall introduction)
-    OnClickBtnContinue();
+    OnClickBtnContinue(++sequenceCounter);
+
 </script>
